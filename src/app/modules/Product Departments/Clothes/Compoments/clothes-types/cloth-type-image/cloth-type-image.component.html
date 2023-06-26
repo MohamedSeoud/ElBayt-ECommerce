@@ -1,0 +1,8 @@
+<div class="container">
+  <img [src]="src" alt="Avatar" >
+  <div class="overlay" *ngIf="IsDeleted">
+    <a [routerLink]="" class="icon" (click)="DeleteImage()" title="User Profile">
+      <i  class="nb-trash"></i>
+    </a>
+  </div>
+</div>

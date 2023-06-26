@@ -1,0 +1,30 @@
+<div class="row offset-md">
+  <div class="col-lg-8  offset-md-2">
+    <nb-card>
+      <nb-card-header>Login</nb-card-header>
+      <nb-card-body>
+        <div class="full-name-inputs">
+          <form [formGroup]="DataForm" (ngSubmit)="SubmitData()">
+              <div class="form-group col-lg-6 offset-md-2">
+                <label for="CategoryName" class="label">UserName Or Email</label>
+                <input type="text" nbInput fullWidth formControlName="UserName" [status]="ValidateInput('UserName')" id="UserName" placeholder="UserName">
+              </div>
+
+              <div class="form-group col-lg-6 offset-md-2">
+                <label for="Type" class="label">Password</label>
+                <input type="password" nbInput fullWidth formControlName="Password" [status]="ValidateInput('Password')" id="Password" placeholder="Password">
+              </div>
+
+
+              <div class="form-group col-lg-12 offset-md-4">
+                <button type="submit" class="col-lg-2" nbButton status="danger">Login</button>
+              </div>
+
+            </form>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+

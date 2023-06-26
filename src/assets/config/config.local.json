@@ -1,0 +1,6 @@
+{
+  "baseAPIUrl": "https://localhost:44311/",
+  "FilesUrl": "https://localhost:44311/",
+  "NswagAPIUrl": "https://localhost:44311",
+  "PageSize": 10
+}

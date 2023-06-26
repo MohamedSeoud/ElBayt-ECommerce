@@ -1,0 +1,20 @@
+{
+  "ExpandedNodes": [
+<<<<<<< HEAD
+    ""
+=======
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\modules",
+    "\\src\\app\\modules\\General",
+    "\\src\\app\\modules\\General\\Components",
+    "\\src\\app\\modules\\General\\Components\\color",
+    "\\src\\app\\modules\\General\\Components\\color\\table-buttons",
+    "\\src\\app\\modules\\Product Departments",
+    "\\src\\app\\modules\\Product Departments\\Clothes",
+    "\\src\\app\\modules\\Shared"
+>>>>>>> f99ebd1a6d395b00cb8c3b55b3d1e93ba88a2e26
+  ],
+  "PreviewInSolutionExplorer": false
+}

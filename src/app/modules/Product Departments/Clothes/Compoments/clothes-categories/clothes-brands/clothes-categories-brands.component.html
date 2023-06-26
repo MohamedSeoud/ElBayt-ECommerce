@@ -1,0 +1,30 @@
+<div class="row offset-md">
+  <div class="col-lg-12">
+    <nb-card>
+      <nb-card-header>Cloth Category Brands</nb-card-header>
+      <nb-card-body>
+          <div class="full-name-inputs">
+            <form [formGroup]="DataForm" (ngSubmit)="SubmitData()">
+              <div class="col-md-12 col-lg-6 col-xxxl-6" #BrandList>
+                <nb-card class="list-card" size="small">
+                  <nb-card-header>Brands</nb-card-header>
+                  <nb-list>       
+                      <nb-list-item *ngFor="let brand of brands">
+                        <nb-checkbox [checked]="brand.Checked" [id]="brand.Id" status="success">{{brand.Name}}</nb-checkbox>
+                      </nb-list-item>
+                  </nb-list>
+                </nb-card>
+              </div>
+              <div class="form-group col-lg-12 offset-md-4">
+                <button type="submit" class="col-lg-2" nbButton status="danger"
+                        [nbSpinner]="loadingLargeGroup" nbSpinnerStatus="success" [disabled]="EnableSubmit" nbSpinnerSize="large">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="row offset-md">
+  <div class="col-lg-12">
+    <nb-card>
+      <nb-card-header>Register</nb-card-header>
+      <nb-card-body>
+        <div class="full-name-inputs">
+          <form [formGroup]="DataForm" (ngSubmit)="SubmitData()">
+
+            <div class="form-group col-lg-6 offset-md-2">
+              <label for="Name" class="label">Name</label>
+              <input type="text" nbInput fullWidth [status]="ValidateInput('Name')" formControlName="Name" [(ngModel)]="identityUser.Name" id="Name" placeholder="Name">
+            </div>
+
+            <div class="form-group col-lg-6 offset-md-2">
+              <label for="Email" class="label">Email</label>
+              <input type="text" nbInput fullWidth [status]="ValidateInput('Email')" formControlName="Email" [(ngModel)]="identityUser.Email" id="Email" placeholder="Email">
+            </div>
+
+            <div class="form-group col-lg-6 offset-md-2">
+              <label for="Email" class="label">UserName</label>
+              <input type="text" nbInput fullWidth [status]="ValidateInput('UserName')" formControlName="UserName" [(ngModel)]="identityUser.UserName" id="UserName" placeholder="UserName">
+            </div>
+
+            <div class="form-group col-lg-6 offset-md-2">
+              <label for="PasswordHash" class="label">Password</label>
+              <input type="password" nbInput fullWidth [status]="ValidateInput('PasswordHash')" formControlName="PasswordHash" [(ngModel)]="identityUser.PasswordHash" id="PasswordHash" placeholder="Password">
+            </div>
+
+            <div class="form-group col-lg-6 offset-md-2">
+              <label for="Confirm Password" class="label">Confirm Password</label>
+              <input type="password" nbInput fullWidth [status]="ValidateInput('ConfirmPassword')" formControlName="ConfirmPassword"  id="ConfirmPassword" placeholder="Confirm Password">
+            </div>
+
+
+            <div class="form-group col-lg-6 offset-md-2">
+              <label for="PhoneNumber" class="label">Phone Number</label>
+              <input type="tel" nbInput fullWidth [status]="ValidateInput('PhoneNumber')" formControlName="PhoneNumber" [(ngModel)]="identityUser.PhoneNumber" id="PhoneNumber" placeholder="Phone Number">
+            </div>
+
+            <div class="form-group col-lg-6 offset-md-2">
+              <label for="AccessFailedCount" class="label">Access Failed Count</label>
+              <input type="tel" nbInput fullWidth [status]="ValidateInput('AccessFailedCount')" formControlName="AccessFailedCount" [(ngModel)]="identityUser.AccessFailedCount" id="AccessFailedCount" placeholder="Access Failed Count">
+            </div>
+
+            <div class="form-group col-lg-12 offset-md-4">
+              <button type="submit" class="col-lg-2" nbButton status="danger">Register</button>
+            </div>
+
+          </form>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+

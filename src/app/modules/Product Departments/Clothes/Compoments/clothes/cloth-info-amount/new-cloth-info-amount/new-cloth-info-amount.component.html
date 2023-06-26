@@ -1,0 +1,52 @@
+<div class="row offset-md">
+  <div class="col-lg-12">
+    <nb-card>
+      <nb-card-header>Cloth Info</nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="DataForm" (ngSubmit)="SubmitData()">
+
+          <div class="form-group col-lg-6 offset-md-2">
+            <label for="Price" class="label">Price</label>
+            <input type="number" nbInput fullWidth [status]="ValidateInput('Price')" formControlName="Price" [(ngModel)]="clothinfo.Price" id="Price" placeholder="Price">
+          </div>
+
+          <div class="form-group col-lg-6 offset-md-2">
+            <label for="PriceAfterDiscount" class="label">Price After Discount</label>
+            <input type="number" nbInput fullWidth formControlName="PriceAfterDiscount" [(ngModel)]="clothinfo.PriceAfterDiscount" id="PriceAfterDiscount" placeholder="PriceAfterDiscount">
+          </div>
+
+          <div class="form-group col-lg-6 offset-md-2">
+            <label for="Amount" class="label">Amount</label>
+            <input type="number" nbInput fullWidth [status]="ValidateInput('Amount')" formControlName="Amount" [(ngModel)]="clothinfo.Amount" id="Amount" placeholder="Amount">
+          </div>
+
+          <div class="form-group col-md-8 offset-sm-2">
+            <label for="Size" class="label">Size</label>
+            <nb-select [selected]="SelectedSize" class="form-group  col-lg-6" [(ngModel)]="clothinfo.SizeId" formControlName="SizeId" id="SizeId">
+              <nb-option *ngFor="let Size of Sizes" [value]="Size.Id">{{Size.Name}}</nb-option>
+            </nb-select>
+          </div>
+
+          <div class="form-group col-md-8 offset-sm-2">
+            <label for="Color" class="label">Color</label>
+            <nb-select [selected]="SelectedColor" class="form-group  col-lg-6" [(ngModel)]="clothinfo.ColorId" formControlName="ColorId" id="ColorId">
+              <nb-option *ngFor="let Color of Colors" [value]="Color.Id">{{Color.Name}}<input class="form-group" ejs-colorpicker id='color-picker' type='color' [value]='Color.Color' /></nb-option>
+            </nb-select>
+          </div>
+
+
+
+
+          <div class="form-group col-lg-12 offset-md-4">
+            <button type="submit" class="col-lg-2" nbButton status="danger"
+                    [nbSpinner]="loadingLargeGroup" nbSpinnerStatus="success" [disabled]="EnableSubmit" nbSpinnerSize="large">
+              Submit
+            </button>
+          </div>
+
+        </form>
+      </nb-card-body>
+    </nb-card>
+
+  </div>
+</div>

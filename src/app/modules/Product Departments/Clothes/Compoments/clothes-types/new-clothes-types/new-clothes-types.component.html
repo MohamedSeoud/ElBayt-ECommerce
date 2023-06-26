@@ -1,0 +1,52 @@
+<div class="row offset-md">
+  <div class="col-lg-12">
+    <nb-card>
+      <nb-card-header>Clothes Types</nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="DataForm" (ngSubmit)="SubmitData(file1.files)">
+          <div class="form-group col-lg-6 offset-md-2">
+            <label for="TypeName" class="label">Type Name</label>
+            <input type="text" nbInput fullWidth [status]="ValidateInput('Name')" formControlName="Name" [(ngModel)]="clothtype.Name" id="TypeName" placeholder="TypeName">
+          </div>
+
+          <div class="form-group col-lg-6 offset-md-2">
+            <label for="ImageURL" class="label">Type Image</label>
+            <input type="file" nbInput fullWidth formControlName="TypePic"
+                   #file1 id="Image1" [status]="ValidateInput('TypePic')"
+                   placeholder="Choose Image">
+          </div>
+
+          <div class="form-group col-md-8 offset-sm-2">
+            <label for="Department" class="label">Type Department</label>
+            <nb-select [selected]="SelectedDepartment" class="form-group  col-lg-6" [(ngModel)]="clothtype.ClothDepartmentId" formControlName="ClothDepartmentId" id="ClothDepartmentId">
+              <nb-option *ngFor="let Department of Departments" [value]="Department.Id">{{Department.Name}}</nb-option>
+            </nb-select>
+          </div>
+
+          <div class="form-group col-lg-12 offset-md-4">
+            <button type="submit" class="col-lg-2" nbButton status="danger"
+                    [nbSpinner]="loadingLargeGroup" nbSpinnerStatus="success" [disabled]="EnableSubmit" nbSpinnerSize="large">
+              Submit
+            </button>
+          </div>
+
+        </form>
+      </nb-card-body>
+    </nb-card>
+
+
+    <nb-card *ngIf="ExistTypeImage">
+      <nb-card-header>Type Image</nb-card-header>
+      <nb-card-body>
+        <div class="full-name-inputs form-group row">
+          <ngx-cloth-type-image [src]="TypePic" [IsDeleted]="IsImageDeleted" *ngIf="clothtype.TypePic!==null">
+          </ngx-cloth-type-image>
+        </div>
+      </nb-card-body>
+
+    </nb-card>
+
+
+
+  </div>
+</div>

@@ -1,0 +1,6 @@
+{
+  "baseAPIUrl": "http://beta.elbayt.com/",
+  "FilesUrl": "http://beta.elbayt.com/",
+  "NswagAPIUrl": "http://beta.elbayt.com",
+  "PageSize": 10
+}
